@@ -1,0 +1,21 @@
+{
+  "name": "lib",
+  "version": "0.0.0",
+  "homepage": "https://github.com/leifehetland/historyofyou",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6",
+    "angularfire": "~1.1.3"
+  }
+}
