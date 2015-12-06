@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+	<h1>HISTORY OF YOU</h1>
+		<form ng-controller="AuthCtrl as authCtrl" name="form" class="register-form">
+		  <div class="email__register">
+			  <input class="form-control" id="reg-email" placeholder="Enter Email" ng-model="authCtrl.email" type="text"/>
+		  </div>
+		  <div class="password__register">
+			  <input class="form-control" id="reg-password" placeholder="Enter Password" ng-model="authCtrl.password" type="password"/>
+		  </div>
+
+		  <button href="#/" class="btn btn-material-blue register__btn" ng-click="authCtrl.register()">Sign Up</button>
+
+		  <button class="btn btn-material-red" ng-click="authCtrl.removeUser()">Delete</button>
+		  
+		</form>
+	</div>
+</div>
