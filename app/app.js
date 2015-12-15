@@ -12,7 +12,7 @@ app.config(['$routeProvider', function($routeProvider) {
     })
     .when('/your-profile', {
         templateUrl: 'partials/yourprofile.html',
-        controller: 'YourProfileCtrl as yourProfileCtrl'
+        controller: 'YourMapCtrl as yourMapCtrl'
     })
 	}
 ]);
