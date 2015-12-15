@@ -1,1 +1,9 @@
-<h1>Welcome to the History of You</h1>
+<h1><u>Welcome To The History Of You</u></h1>
+
+<div ng-include="'partials/navbar.html'"></div>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+<br>
+<input type="text" id="storyBox" ng-model="yourMapCtrl.descriptionObj.description">
+<br>
+<button type="submit" ng-click="yourMapCtrl.saveLocation()"> Save Your Story</button>
