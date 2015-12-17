@@ -10,8 +10,12 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/signup.html',
         controller: 'AuthCtrl as authCtrl'
     })
-    .when('/your-profile', {
-        templateUrl: 'partials/yourprofile.html',
+    .when('/you', {
+        templateUrl: 'partials/you.html',
+        controller: 'YouCtrl as youCtrl'
+    })
+    .when('/your-story', {
+        templateUrl: 'partials/yourstory.html',
         controller: 'YourMapCtrl as yourMapCtrl'
     })
 	}

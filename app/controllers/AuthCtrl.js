@@ -25,7 +25,7 @@ app.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$location',
 				console.log('Logged in as:', authData.uid);
 				userId = authData.password.email;
 				console.log(userId, userId);
-				$location.path('/your-profile');
+				$location.path('/your-story');
 			}).catch(function(error) {
 				user.error = error;
 				console.log('Authentication failed:', error);

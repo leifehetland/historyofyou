@@ -89,7 +89,7 @@ app.controller('YourMapCtrl', ['Auth', '$firebaseAuth', "$firebaseArray", '$loca
       var locations = $firebaseArray(newRef);
       console.log("myPlace", myPlace);
 
-      myPlace.descrption = this.descriptionObj.description;
+      myPlace.description = this.descriptionObj.description;
 
       console.log("Auth", Auth);
       console.log("newRef", newRef);
