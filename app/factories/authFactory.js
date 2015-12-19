@@ -3,4 +3,4 @@ app.factory('Auth', ['$firebaseAuth',
 		var ref = new Firebase('https://historyofyou.firebaseio.com/');
 		return $firebaseAuth(ref);
 	}
-	]);
+]);

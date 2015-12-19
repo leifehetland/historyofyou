@@ -10,8 +10,6 @@ body{
   border-radius: 5px;
   background-color: #CCC;
   text-align: center;
-  margin-left: 28%;
-  margin-top: 2%;
   }
 
 #storyBox{
@@ -68,3 +66,17 @@ body{
 #target {
   width: 345px;
   }
+
+#youStyles {
+  background-color: whitesmoke;
+  border: 5px solid black;
+  border-radius: 5px;
+  opacity: .75;
+  margin: auto;
+  width: 60%;
+}
+
+#locationName{
+  font-size: 26px;
+  text-decoration: underline;
+}

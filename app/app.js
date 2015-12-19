@@ -14,9 +14,13 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'partials/you.html',
         controller: 'YouCtrl as youCtrl'
     })
-    .when('/your-story', {
-        templateUrl: 'partials/yourstory.html',
-        controller: 'YourMapCtrl as yourMapCtrl'
+    // .when('/your-story', {
+    //     templateUrl: 'partials/yourstory.html',
+    //     controller: 'YourMapCtrl as yourMapCtrl'
+    // })
+    .when('/us/:location', {
+        templateUrl: 'partials/us.html',
+        controller: 'UsCtrl as usCtrl'
     })
 	}
 ]);

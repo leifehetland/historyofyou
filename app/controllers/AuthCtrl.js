@@ -1,5 +1,5 @@
-app.controller('AuthCtrl', ['Auth', '$firebaseAuth', '$location', 
-	function(Auth, $firebaseAuth, $location){
+app.controller('AuthCtrl', ['Auth', '$firebaseAuth', 'userFactory', '$location', 
+	function(Auth, $firebaseAuth, userFactory, $location){
 
 		var user = this;
 		var userId;

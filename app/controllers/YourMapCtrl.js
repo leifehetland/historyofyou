@@ -6,7 +6,7 @@ app.controller('YourMapCtrl', ['Auth', '$firebaseAuth', "$firebaseArray", '$loca
     var myPlace = {};
 
 
-     this.initAutocomplete = function() {
+    initAutocomplete = function() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat:86.7833, lng:36.1667},
     zoom: 13,
@@ -102,6 +102,10 @@ app.controller('YourMapCtrl', ['Auth', '$firebaseAuth', "$firebaseArray", '$loca
 
     };
 
- google.maps.event.addDomListener(window, 'load', this.initAutocomplete); 
+  $('#myModal').on('shown.bs.modal', function () {
+      initAutocomplete();
+      google.maps.event.trigger(map, "resize");
+    });
+ // google.maps.event.addDomListener(window, 'load', this.initAutocomplete); 
 
 }]);
