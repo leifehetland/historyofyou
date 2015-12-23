@@ -5,84 +5,86 @@ app.controller('YourMapCtrl', ['Auth', '$firebaseAuth', "$firebaseArray", '$loca
 
     var myPlace = {};
 
+    var map, input, searchBox, places;
 
-    initAutocomplete = function() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat:86.7833, lng:36.1667},
-    zoom: 13,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
 
-  // Create the search box and link it to the UI element.
-  var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    this.initMapWithAutoComplete = function() {
+      // alert("init");
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 36.1626638, lng: -86.78160159999999},
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
 
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
+      // Create the search box and link it to the UI element.
+      input = document.getElementById('pac-input');
+      searchBox = new google.maps.places.SearchBox(input);
+      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-  var markers = [];
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
-  searchBox.addListener('places_changed', function() {
-    var places = searchBox.getPlaces();
+      // Bias the SearchBox results towards current map's viewport.
+      map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+      });
 
-    if (places.length == 0) {
-      return;
-    }
+      var markers = [];
+      // Listen for the event fired when the user selects a prediction and retrieve
+      // more details for that place.
+      searchBox.addListener('places_changed', function() {
 
-    // Clear out the old markers.
-    markers.forEach(function(marker) {
-      marker.setMap(null);
+        places = searchBox.getPlaces();
+
+        if (places.length == 0) {
+          return;
+        }
+
+        // Clear out the old markers.
+        markers.forEach(function(marker) {
+          marker.setMap(null);
+        });
+        markers = [];
+
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+          var icon = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25)
+          };
+
+          // Create a marker for each place.
+          markers.push(new google.maps.Marker({
+            map: map,
+            icon: icon,
+            title: place.name,
+            position: place.geometry.location
+          }));
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+
+        yourPlace = {
+          uid: authdataUID,
+          name: places[0].name,
+          placeID: places[0].place_id,
+          lat: places[0].geometry.location.lat(),
+          lng: places[0].geometry.location.lng()
+        };
+
+        console.log("yourPlace", yourPlace);
+
+        map.fitBounds(bounds);
     });
-    markers = [];
+  };
 
-    // For each place, get the icon, name and location.
-    var bounds = new google.maps.LatLngBounds();
-    places.forEach(function(place) {
-      var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
-      };
-
-      // Create a marker for each place.
-      markers.push(new google.maps.Marker({
-        map: map,
-        icon: icon,
-        title: place.name,
-        position: place.geometry.location
-      }));
-
-      if (place.geometry.viewport) {
-        // Only geocodes have viewport.
-        bounds.union(place.geometry.viewport);
-      } else {
-        bounds.extend(place.geometry.location);
-      }
-    });
-
-     myPlace = {
-        uid: authdataUID,
-        name: places[0].name,
-        placeID: places[0].place_id,
-        lat: places[0].geometry.location.lat(),
-        lng: places[0].geometry.location.lng(),
-        // description: this.descriptionObj.description
-      };
-
-
-        console.log("myPlace", myPlace);
-
-    map.fitBounds(bounds);
-  });
-};
-
-  this.saveLocation = function() {
+    this.saveLocation = function() {
 
       var useruid = Auth.$getAuth().uid;
       var newRef = new Firebase("https://historyofyou.firebaseio.com/stories");
@@ -98,14 +100,8 @@ app.controller('YourMapCtrl', ['Auth', '$firebaseAuth', "$firebaseArray", '$loca
       locations.$add(myPlace);
 
       console.log("newRef", newRef);
-      // myPlace = {};
+      myPlace = {};
 
     };
-
-  $('#myModal').on('shown.bs.modal', function () {
-      initAutocomplete();
-      google.maps.event.trigger(map, "resize");
-    });
- // google.maps.event.addDomListener(window, 'load', this.initAutocomplete); 
-
+    this.initMapWithAutoComplete(); 
 }]);

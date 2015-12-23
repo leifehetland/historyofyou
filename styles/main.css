@@ -3,15 +3,6 @@ body{
   text-align: center;
 }
 
-#map {
-  height: 500px;
-  width: 500px;
-  border: 10px solid black;
-  border-radius: 5px;
-  background-color: #CCC;
-  text-align: center;
-  }
-
 #storyBox{
   border: 10px solid black;
   border-radius: 5px;
@@ -80,3 +71,12 @@ body{
   font-size: 26px;
   text-decoration: underline;
 }
+
+#map {
+  height: 500px;
+  width: 500px;
+  border: 10px solid black;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 28%;
+  }

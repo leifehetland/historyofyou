@@ -1,5 +1,5 @@
-app.controller('AuthCtrl', ['Auth', '$firebaseAuth', 'userFactory', '$location', 
-	function(Auth, $firebaseAuth, userFactory, $location){
+app.controller('AuthCtrl', ['Auth', '$firebaseAuth', 'userFactory', '$location', '$rootScope', 
+	function(Auth, $firebaseAuth, userFactory, $location, $rootScope){
 
 		var user = this;
 		var userId;
@@ -23,6 +23,7 @@ app.controller('AuthCtrl', ['Auth', '$firebaseAuth', 'userFactory', '$location',
 				password: user.password
 			}).then(function(authData, loggedInUser) {
 				console.log('Logged in as:', authData.uid);
+				$rootScope.uid=authData.uid;
 				userId = authData.password.email;
 				console.log(userId, userId);
 				$location.path('/your-story');

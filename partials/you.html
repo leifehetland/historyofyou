@@ -1,41 +1,16 @@
-
-<!-- Button trigger modal -->
-<!-- <div ng-controller="YourMapCtrl as yourMapCtrl"></div> -->
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Your Story</button>
-
-	<!-- Modal -->
-	<div ng-controller="YourMapCtrl as yourMapCtrl"></div>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title" id="myModalLabel">Your Story</h4>
-	      </div>
-	      <div class="modal-body">
-	        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-					<div id="map"></div>
-					<br>
-					<input type="text" id="storyBox" ng-model="yourMapCtrl.descriptionObj.description">
-					<br>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary" ng-click="yourMapCtrl.saveLocation()"> Save Your Story</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+<h1>Test</h1>
 
 	<div id="youStyles">
 		<div ng-repeat="stories in youCtrl.stories_list | filter: query" >
-		  <a href="#/stories/{{ stories.id }}" id="locationName">{{ stories.name }} </a>
-		  <br>
-		  <a href="#/stories/{{ stories.id }}">{{ stories.description }}</a>
-		  <br>
-		  <a href="#/stories/{{ stories.id }}">{{ stories.uid }} </a>
-		  <br>
-			<a class="btn btn-success" href="#/us/{{stories.name}}">Go To Here</a>
-			<br>
+			<div ng-show='stories.uid == uid'>
+			  <a href="#/stories/{{ stories.id }}" id="locationName">{{ stories.name }} </a>
+			  <br>
+			  <a href="#/stories/{{ stories.id }}">{{ stories.description }}</a>
+			  <br>
+			  <a href="#/stories/{{ stories.id }}">{{ stories.uid }} </a>
+			  <br>
+				<a class="btn btn-success" href="#/us/{{stories.name}}">Go To Here</a>
+				<br>
+			</div>
 		</div>
 	</div>

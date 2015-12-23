@@ -1,2 +1,16 @@
 <h1>Test2</h1>
-<!-- When a user clicks on a link of a location it loads that location page with all the narratives that have been assigned to that location. The user has to have the location saved in order to use the link to connect to the hub page. -->
+
+	<div id="usStyles">
+		<div ng-repeat="stories in usCtrl.stories_list | filter: query" >
+			<div ng-show="stories.name == usCtrl.myLocation">
+			  <a href="#/stories/{{ stories.id }}" id="locationName">{{ stories.name }} </a>
+			  <br>
+			  <a href="#/stories/{{ stories.id }}">{{ stories.description }}</a>
+			  <br>
+			  <a href="#/stories/{{ stories.id }}">{{ stories.uid }} </a>
+			  <br>
+				<a class="btn btn-success" href="#/us/{{stories.name}}">Go To Here</a>
+				<br>
+			</div>
+		</div>
+	</div>
