@@ -1,4 +1,4 @@
-<h1>Test2</h1>
+<h1 id="welcome2">Us</h1>
 
 	<div id="usStyles">
 		<div ng-repeat="stories in usCtrl.stories_list | filter: query" >
@@ -9,7 +9,7 @@
 			  <br>
 			  <a href="#/stories/{{ stories.id }}">{{ stories.uid }} </a>
 			  <br>
-				<a class="btn btn-success" href="#/us/{{stories.name}}">Go To Here</a>
+				<a class="btn btn-success" href="#/us/:location">Go To Here</a>
 				<br>
 			</div>
 		</div>
