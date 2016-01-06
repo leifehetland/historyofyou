@@ -3,11 +3,11 @@
 	<div id="youStyles">
 		<div ng-repeat="stories in youCtrl.stories_list | filter: query" >
 			<div ng-show='stories.uid == uid'>
-			  <a href="#/stories/{{ stories.id }}" id="locationName">{{ stories.name }} </a>
+			  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
 			  <br>
-			  <a href="#/stories/{{ stories.id }}">{{ stories.description }}</a>
+			  <a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
 			  <br>
-			  <a href="#/stories/{{ stories.id }}">{{ stories.alias }} </a>
+			  <a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>
 			  <br>
 				<a class="btn btn-success" href="#/us/{{stories.name}}">Other Stories</a>
 				<br>

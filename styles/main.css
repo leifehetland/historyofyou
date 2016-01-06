@@ -10,6 +10,11 @@ body{
   border-radius: 5px;
 }
 
+.notActive {
+   pointer-events: none;
+   cursor: default;
+}
+
 .controls {
   margin-top: 10px;
   border: 1px solid transparent;
