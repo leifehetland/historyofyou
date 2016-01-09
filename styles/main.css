@@ -3,6 +3,7 @@ body{
   background: url("/Winter.jpg") no-repeat;
   background-size: cover;
   text-align: center;
+  color: black;
 }
 
 #storyBox{
@@ -13,6 +14,7 @@ body{
 .notActive {
    pointer-events: none;
    cursor: default;
+   color: #404039;
 }
 
 .controls {
@@ -84,8 +86,9 @@ body{
 }
 
 #locationName{
-  font-size: 26px;
+  font-size: 30px;
   text-decoration: underline;
+  padding-top: 10px;
 }
 
 #map {
@@ -119,4 +122,9 @@ body{
   font-size: 14px;
   float: left;
   position: relative;
+}
+
+#storyFormat {
+  padding: 15px 50px 0 50px;
+  background: lightblue;
 }

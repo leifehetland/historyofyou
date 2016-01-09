@@ -90,7 +90,6 @@ app.controller('YourMapCtrl', ['Auth', '$firebaseAuth', "$firebaseArray", '$loca
       var newRef = new Firebase("https://historyofyou.firebaseio.com/stories");
       var locations = $firebaseArray(newRef);
       console.log("myPlace", myPlace);
-      debugger;
 
       myPlace = yourPlace;
       myPlace.description = this.descriptionObj.description;

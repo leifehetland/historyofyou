@@ -4,7 +4,7 @@
 		<div ng-repeat="stories in usCtrl.stories_list | filter: query" >
 			<div ng-show="stories.name == usCtrl.myLocation">
 			  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
-			  <div>
+			  <div id="storyFormat">
 			  	<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
 			  <div>
 			  <a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>

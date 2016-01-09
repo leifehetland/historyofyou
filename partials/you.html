@@ -5,9 +5,12 @@
 			<div ng-show='stories.uid == uid'>
 			  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
 			  <br>
-			  <a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
+			  <div id="storyFormat">
+			  	<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
+			  <div>
 			  <br>
 			  <a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>
+			  <br>
 			  <br>
 				<a class="btn btn-success" href="#/us/{{stories.name}}">Other Stories</a>
 				<br>
