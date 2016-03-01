@@ -1,25 +1,21 @@
-<div ng-controller="AuthCtrl as authCtrl"></div>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div id="login-header">
-      <h1 id="welcome1">Welcome To The</h1>
-      <h1 id="welcome2"><u>History Of You</u></h1>
-        <div name="login-form">
-          <form  id="login-form">
-            <div>
-              <input class="form-control" id="email" required type="email" ng-model="authCtrl.email" placeholder="Enter Email"/>
-            </div>
-            <br>
-            <div>
-              <input class="form-control" id="password" required type="password" ng-model="authCtrl.password" placeholder="Enter Password"/>
-            </div>
-            <button class="btn btn-material-red" ng-click="authCtrl.login()" ng-show="authCtrl.email && authCtrl.password">Log In</button>
+<div layout-align="center center"> 
 
-            <h3><u><a href="#/signup">Sign Up</a></u></h3>
-            <br>
-          </form>
-        </div>
-    </div>
-  </div>
+  <div ng-controller="AuthCtrl as authCtrl"></div>
+
+  <md-input-container>
+    <input id="email" required type="email" ng-model="authCtrl.email" placeholder="Enter Email"/>
+  </md-input-container>
+
+  <md-input-container>
+    <input id="password" required type="password" ng-model="authCtrl.password" placeholder="Enter Password"/>
+  </md-input-container>
+
+
+  <md-button ng-click="authCtrl.login()" ng-show="authCtrl.email && authCtrl.password">Log In</md-button>
+  
+  <br>
+
+  <md-button href="#/signup">Sign Up</md-button>
+
 </div>
 

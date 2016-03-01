@@ -1,20 +1,35 @@
-<h1 id="welcome2"><u>You</u></h1>
+<div layout="row" layout-align="space-around center">
 
-	<div id="youStyles">
-		<div ng-repeat="stories in youCtrl.stories_list | filter: query" >
-			<div ng-show='stories.uid == uid'>
-			  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
-			  <br>
-			  <div id="storyFormat">
-			  	<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
-			  <div>
-			  <br>
-			  <a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>
-			  <br>
-			  <br>
-				<a class="btn btn-success" href="#/us/{{stories.name}}">Other Stories</a>
+	<div ng-repeat="stories in youCtrl.stories_list | filter: query" >
+
+		<div ng-show='stories.uid == uid'>
+
+		  <md-button href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </md-button>
+
+		  	<br>
+
+		  	<md-button href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</md-button>
+
+		  <div>
+
+		  	<br>
+
+		  	<md-button href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </md-button>
+
+		  	<br>
+
+		  	<br>
+
+				<md-button href="#/us/{{stories.name}}">Other Stories</md-button>
+
 				<br>
+
 				<br>
+
 			</div>
+
 		</div>
+
 	</div>
+
+</div>

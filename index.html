@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>History of You</title>
-	<link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Old+Standard+TT|Abril+Fatface|Roboto|Roboto+Slab' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="./styles/main.css">
-</head>
-<body ng-app="HistoryOfYouApp">
+  <head>
+  	<title>History of You</title>
+  	<meta charset="utf-8">
+    <!--Angular Material-->
+    <link rel="stylesheet" href="/lib/bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  	<link href='https://fonts.googleapis.com/css?family=Old+Standard+TT|Abril+Fatface|Roboto|Roboto+Slab' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+  </head>
 
-	<div class="collapse navbar-collapse" id="navStyles">
-	    <ul class="nav navbar-nav">
-	        <li ng-class="{ active: isActive('/#/you')}"><a href="/#/you">You</a></li>
-	        <li ng-class="{ active: isActive('/#/yourstory')}"><a href="/#/your-story">Your Story</a></li>
-	    </ul>
-	</div>
+  <body ng-app = "HistoryOfYouApp" class="container-fluid" ng-model='ngMaterial' layout="column">
 
-	<div ng-view class="container"></div>
+  	<md-toolbar layout="row" layout-align="space-around center">
+      <h1>History of You</h1>
+    </md-toolbar>
 
+      <md-sidenav layout="column"
+       md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')"
+       class="md-whiteframe-z2">
+        <md-list>
+          
+          <md-list-item class="md-2-line">
+            <md-button a href="/#/you">You</md-button>
+          </md-list-item>
 
-	<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
-	<script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
-	<script src="lib/bower_components/angular-route/angular-route.js"></script>
-	<script type="text/javascript" src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqh3Dg1iUw4oAnu00PvQOc-M3D_eH8BFw&libraries=places"></script>
-	<script type="text/javascript" src="./app/app.js"></script>
-	<script type="text/javascript" src="app/factories/authFactory.js"></script>
-	<script type="text/javascript" src="app/factories/userFactory.js"></script>
-	<script type="text/javascript" src="app/controllers/AuthCtrl.js"></script>
-	<script type="text/javascript" src="app/controllers/YourMapCtrl.js"></script>
-	<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
-	<script type="text/javascript" src="app/controllers/YouCtrl.js"></script>
-	<script type="text/javascript" src="app/controllers/UsCtrl.js"></script>
+          <md-list-item class="md-2-line">
+            <md-button a href="/#/your-story">Your Story</md-button>
+          </md-list-item>
 
-</body>
+        </md-list>
+      </md-sidenav>
 
-<footer>
-      <p id="footer">&copy; 2016 Leif E. Hetland</p>
-    </footer>
+      <md-content id="content" md-component-id="right" layout-align="center center">
+        <div ng-view></div>
+      </md-content>
+
+  	<!-- Jquery -->
+  	<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+  	<script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+  	<script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
+  	<script src="lib/bower_components/angular-route/angular-route.js"></script>
+  	<script type="text/javascript" src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
+  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqh3Dg1iUw4oAnu00PvQOc-M3D_eH8BFw&libraries=places"></script>
+  	<!-- Angular Material-->
+    <script src="/lib/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/lib/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/lib/bower_components/angular-material/angular-material.js"></script>
+  	<script type="text/javascript" src="./app/app.js"></script>
+  	<!-- Scripts -->
+  	<script type="text/javascript" src="app/factories/authFactory.js"></script>
+  	<script type="text/javascript" src="app/factories/userFactory.js"></script>
+  	<script type="text/javascript" src="app/controllers/AuthCtrl.js"></script>
+  	<script type="text/javascript" src="app/controllers/YourMapCtrl.js"></script>
+  	<script type="text/javascript" src="app/controllers/NavCtrl.js"></script>
+  	<script type="text/javascript" src="app/controllers/YouCtrl.js"></script>
+  	<script type="text/javascript" src="app/controllers/UsCtrl.js"></script>
+
+  </body>
+
+  <footer>
+    <p id="footer">&copy; 2016 Leif E. Hetland</p>
+  </footer>
 </html>

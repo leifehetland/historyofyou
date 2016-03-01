@@ -1,14 +1,27 @@
-<h1 id="welcome2">Us</h1>
+<div layout="row" layout-align="space-around center">
 
-	<div id="usStyles">
-		<div ng-repeat="stories in usCtrl.stories_list | filter: query" >
-			<div ng-show="stories.name == usCtrl.myLocation">
-			  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
-			  <div id="storyFormat">
-			  	<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
-			  <div>
-			  <a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>
-			  <br>
+	<div ng-repeat="stories in usCtrl.stories_list | filter: query" >
+
+		<div ng-show="stories.name == usCtrl.myLocation">
+
+		  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
+
+		  <div>
+
+		  	<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
+
+		  	<div>
+
+		  		<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>
+
+		  			<br>
+
+				</div>
+
 			</div>
+
 		</div>
+
 	</div>
+
+</div>

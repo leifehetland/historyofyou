@@ -1,12 +1,19 @@
-<h1 id="welcome2"><u>Your Story</u></h1>
+<div layout="column" layout-align="space-around center">
 
-<div>
 	<input id="pac-input" class="controls" type="text" placeholder="Search Box" ng-model="yourMapCtrl.descriptionObj.name">
+
 	<div id="map"></div>
+
 	<br>
-	<textarea type="text" id="storyBox" ng-model="yourMapCtrl.descriptionObj.description" placeholder="What is your Story?"></textarea>
+
+	<textarea type="text" ng-model="yourMapCtrl.descriptionObj.description" placeholder="What is your Story?"></textarea>
+
 	<br>
+
 	<input type="text" style="width: 250px; text-align: center;" ng-model="yourMapCtrl.descriptionObj.alias" placeholder="Enter Your Name or a Pen Name">
+
 	<br>
-	<button type="submit" ng-click="yourMapCtrl.saveLocation()"> Save Your Story</button>
+
+	<md-button type="submit" ng-click="yourMapCtrl.saveLocation()"> Save Your Story</md-button>
+
 </div>	
