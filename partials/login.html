@@ -1,21 +1,16 @@
-<div layout-align="center center"> 
+<div ng-controller="AuthCtrl as authCtrl" layout-align="space-between center"></div>
 
-  <div ng-controller="AuthCtrl as authCtrl"></div>
+<md-input-container>
+  <input id="email" required type="email" ng-model="authCtrl.email" placeholder="Enter Email"/>
+</md-input-container>  
 
-  <md-input-container>
-    <input id="email" required type="email" ng-model="authCtrl.email" placeholder="Enter Email"/>
-  </md-input-container>
-
-  <md-input-container>
-    <input id="password" required type="password" ng-model="authCtrl.password" placeholder="Enter Password"/>
-  </md-input-container>
+<md-input-container>
+  <input id="password" required type="password" ng-model="authCtrl.password" placeholder="Enter Password"/>
+</md-input-container> 
 
 
-  <md-button ng-click="authCtrl.login()" ng-show="authCtrl.email && authCtrl.password">Log In</md-button>
-  
-  <br>
+<md-button layout="row" layout-align="center center" ng-click="authCtrl.login()" ng-show="authCtrl.email && authCtrl.password">Log In</md-button>
 
-  <md-button href="#/signup">Sign Up</md-button>
 
-</div>
+<md-button href="#/signup" layout="row" layout-align="center center">Log In</md-button>
 

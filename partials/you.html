@@ -1,33 +1,27 @@
-<div layout="row" layout-align="space-around center">
+<div ng-repeat="stories in youCtrl.stories_list | filter: query" layout-align="space-between center">
 
-	<div ng-repeat="stories in youCtrl.stories_list | filter: query" >
+	<div ng-show='stories.uid == uid'>
 
-		<div ng-show='stories.uid == uid'>
+	  <md-button href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </md-button>
+	  	
+	  	<br>
 
-		  <md-button href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </md-button>
+	  	<md-button href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</md-button>
 
-		  	<br>
+	  <div>
 
-		  	<md-button href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</md-button>
+	  	<br>
 
-		  <div>
+	  	<md-button href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </md-button>
 
-		  	<br>
+	  	<br>
+	  	<br>
 
-		  	<md-button href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </md-button>
+			<md-button href="#/us/{{stories.name}}">Other Stories</md-button>
 
-		  	<br>
-
-		  	<br>
-
-				<md-button href="#/us/{{stories.name}}">Other Stories</md-button>
-
-				<br>
-
-				<br>
-
-			</div>
-
+			<br>
+			<br>
+			
 		</div>
 
 	</div>

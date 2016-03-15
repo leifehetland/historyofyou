@@ -1,16 +1,19 @@
-<div layout="column" layout-align="space-around center">
-
+<div layout="column" layout-align="space-between center">
+	
 	<input id="pac-input" class="controls" type="text" placeholder="Search Box" ng-model="yourMapCtrl.descriptionObj.name">
-
 	<div id="map"></div>
 
 	<br>
-
-	<textarea type="text" ng-model="yourMapCtrl.descriptionObj.description" placeholder="What is your Story?"></textarea>
+	
+	<md-input-container>
+		<textarea type="text" ng-model="yourMapCtrl.descriptionObj.description" placeholder="What is your Story?"></textarea>
+	</md-input-container>
 
 	<br>
-
-	<input type="text" style="width: 250px; text-align: center;" ng-model="yourMapCtrl.descriptionObj.alias" placeholder="Enter Your Name or a Pen Name">
+	
+	<md-input-container>
+		<input type="text" style="width: 250px; text-align: center;" ng-model="yourMapCtrl.descriptionObj.alias" placeholder="Enter Your Name or a Pen Name">
+	</md-input-container>
 
 	<br>
 

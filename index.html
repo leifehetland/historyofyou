@@ -13,12 +13,13 @@
   <body ng-app = "HistoryOfYouApp" class="container-fluid" ng-model='ngMaterial' layout="column">
 
   	<md-toolbar layout="row" layout-align="space-around center">
-      <h1>History of You</h1>
+      <h1><u>History of You</u></h1>
     </md-toolbar>
-
+      
+      <div layout="row" flex>
       <md-sidenav layout="column"
-       md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')"
-       class="md-whiteframe-z2">
+     md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')"
+     class="md-whiteframe-z2">
         <md-list>
           
           <md-list-item class="md-2-line">
@@ -32,9 +33,8 @@
         </md-list>
       </md-sidenav>
 
-      <md-content id="content" md-component-id="right" layout-align="center center">
-        <div ng-view></div>
-      </md-content>
+      <md-content flex id="content" layout="column" layout-align="space-between center" md-component-id="right" ng-view></md-content>
+      </div>
 
   	<!-- Jquery -->
   	<script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
@@ -59,7 +59,4 @@
 
   </body>
 
-  <footer>
-    <p id="footer">&copy; 2016 Leif E. Hetland</p>
-  </footer>
 </html>

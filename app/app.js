@@ -1,4 +1,8 @@
-var app = angular.module('HistoryOfYouApp', ['ngRoute', 'ngMaterial', 'firebase']);
+var app = angular.module('HistoryOfYouApp', ['ngRoute', 'ngMaterial', 'firebase'])
+
+.run(function($log){
+        $log.debug("Is running");
+    });
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider

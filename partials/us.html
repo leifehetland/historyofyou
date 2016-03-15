@@ -1,22 +1,18 @@
-<div layout="row" layout-align="space-around center">
+<div ng-repeat="stories in usCtrl.stories_list | filter: query" layout-align="space-between center">
 
-	<div ng-repeat="stories in usCtrl.stories_list | filter: query" >
+	<div ng-show="stories.name == usCtrl.myLocation">
 
-		<div ng-show="stories.name == usCtrl.myLocation">
+	  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
 
-		  <a href="#/stories/{{ stories.id }}" class="notActive" id="locationName">{{ stories.name }} </a>
+	  <div>
 
-		  <div>
+	  	<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
 
-		  	<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.description }}</a>
+	  	<div>
 
-		  	<div>
+	  		<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>
 
-		  		<a href="#/stories/{{ stories.id }}" class="notActive">{{ stories.alias }} </a>
-
-		  			<br>
-
-				</div>
+	  			<br>
 
 			</div>
 

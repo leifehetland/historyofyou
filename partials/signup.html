@@ -1,25 +1,22 @@
-<div layout="row" layout-align="space-around center">
+<md-content layout-align="space-between center">
 
-	<form ng-controller="AuthCtrl as authCtrl" name="form" class="register-form">
+<form ng-controller="AuthCtrl as authCtrl" name="form" class="register-form">
 
-	  <div class="email__register">
-
+  <div class="email__register">
+		<md-input-container>
 		  <input class="form-control" id="reg-email" placeholder="Enter Email" ng-model="authCtrl.email" type="text"/>
+		</md-input-container>
+  </div>
 
-	  </div>
+  <br>
 
-	  <br>
+  <div class="password__register">
+		<md-input-container>
+	  	<input class="form-control" id="reg-password" placeholder="Enter Password" ng-model="authCtrl.password" type="password"/>
+		</md-input-container>
+  </div>
 
-	  <div class="password__register">
+  <md-button href="#/" ng-click="authCtrl.register()">Sign Up</md-button>
+</form>
 
-		  <input class="form-control" id="reg-password" placeholder="Enter Password" ng-model="authCtrl.password" type="password"/>
-
-	  </div>
-
-	  <md-button href="#/" class="btn btn-material-blue register__btn" ng-click="authCtrl.register()">Sign Up</md-button>
-
-	  <md-button class="btn btn-material-red" ng-click="authCtrl.removeUser()">Delete</md-button>
-
-	</form>
-	
-</div>
+</md-content>
